@@ -1,17 +1,21 @@
 {
-  "name": "json-server-deploy",
-  "version": "1.0.0",
-  "description": "Simple json database to deploy to the host of your choice",
-  "main": "server.js",
+  "name": "comic-catalog-work",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "json-server": "json-server --watch db.json --port 3000",
+    "live-server": "live-server",
+    "go": "concurrently npm:json-server npm:live-server",
+    "json": "json-server --watch db.json --port 3000"
   },
-  "keywords": [
-    "json-server,heroku, node, REST API"
-  ],
-  "author": "Jesper Orb",
-  "license": "ISC",
   "dependencies": {
-    "json-server": "^0.17.0"
+    "axios": "^1.9.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prettier": "^2.4.1"
   }
 }
